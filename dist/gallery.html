@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Product Filter</title>
+        <link rel="stylesheet" href="gallery.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Cain Dental<span>.</span></a>
+            <div class="menuToggle" onclick="toggleMenu();"></div>
+            <ul class="navigation">
+                <li><a href="index.html"onclick="toggleMenu();">Home</a></li>
+                <li><a href="index.html"onclick="toggleMenu();">About</a></li>
+                <li><a href="index.html"onclick="toggleMenu();">Services</a></li>
+                <li><a href="index.html"onclick="toggleMenu();">Services</a></li>
+                <li><a href="index.html"onclick="toggleMenu();">Team</a></li>
+                <li><a href="index.html"onclick="toggleMenu();">Testimonials</a></li>
+                <li><a href="index.html"onclick="toggleMenu();">Contact</a></li>
+            </ul>
+        </header>
+
+        
+        <section class="about2" id="about2">
+            <div class ="row">
+                <div class="col50">
+                    <h2 class="titleText"><span>A</span>bout Us</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                        Recusandae debitis voluptates animi quos in eius expedita 
+                        quod blanditiis sapiente ad, dolorem ipsum 
+                        tempora nostrum dolor itaque, modi cumque eveniet rerum.<br><br>Lorem ipsum 
+                        dolor sit amet consectetur, adipisicing elit. Asperiores 
+                        sapiente, voluptate voluptatibus omnis quae officia id 
+                        voluptates atque reprehenderit ab sit vel fuga! Velit 
+                        adipisci praesentium, nam quas totam animi?</p>
+                </div>
+            <div class="col50">
+                <div class="imgBx">
+                    <img src="images2/img1.jpg">
+                </div>
+            </div>
+        </div>
+        </section>
+
+       
+            
+
+        <section>
+            <ul>
+                <li class="list active" data-filter="all">All</li>
+                <li class="list" data-filter="crownsandbridges">Crowns and Bridges</li>
+                <li class="list" data-filter="denturesandcastings">Dentures and Castings</li>
+                <li class="list" data-filter="specialservices">Special Services</li>
+                
+            </ul>
+            <div class="product">
+                <div class="itemBox crownsandbridges"><img src="images/pfmcrowns.jpg"></div>
+                <div class="itemBox denturesandcastings"><img src="images/FullDentureSetupandFinish.jpg"></div>
+                <div class="itemBox specialservices"><img src="images/Customshadeinchairside.jpg"></div>
+                <div class="itemBox crownsandbridges"><img src="images/fullgoldcrowns.jpg"></div>
+                <div class="itemBox denturesandcastings"><img src="images/AttachmentDentures.jpg"></div>
+                <div class="itemBox specialservices"><img src="images/Customshadeinlab.jpg"></div>
+                <div class="itemBox crownsandbridges"><img src="images/emaxcrowns.jpg"></div>
+                <div class="itemBox denturesandcastings"><img src="images/AcrylicPartialSetupandFinish.jpg"></div>
+                <div class="itemBox denturesandcastings"><img src="images/customtrays.jpg"></div>
+                <div class="itemBox crownsandbridges"><img src="images/zirconiabridges.jpg"></div>
+                <div class="itemBox denturesandcastings"><img src="images/CastPartialFramework.jpg"></div>
+                <div class="itemBox crownsandbridges"><img src="images/zirconiacrowns.jpg"></div>
+                <div class="itemBox denturesandcastings"><img src="images/FlipperDentures.jpg"></div>
+                <div class="itemBox crownsandbridges"><img src="images/porcelianveneers.jpg.crdownload"></div>
+                <div class="itemBox denturesandcastings"><img src="images/MouthGuards.jpg"></div>
+                <div class="itemBox crownsandbridges"><img src="images/ImplantCrownswithAbutments.jpg"></div>
+                <div class="itemBox denturesandcastings"><img src="images/Relines.jpg"></div>
+                <div class="itemBox crownsandbridges"><img src="images/surgicalstents.png"></div>
+                <div class="itemBox denturesandcastings"><img src="images/biteBlocks.jpg"></div>
+                
+            </div>
+        </section>
+        <div class="copyrightText">
+            <p>Copyright 2020 <a href="#">Change Affects</a>. All Rights Reserved</p>
+        </div>
+        <script type="text/javascript">
+            window.addEventListener('scroll', function(){
+                const header = document.querySelector('header');
+                header.classList.toggle("sticky", window.scrollY > 0);
+            });
+
+            function toggleMenu(){
+                const menuToggle = document.querySelector('.menuToggle');
+                const navigation = document.querySelector('.navigation');
+                menuToggle.classList.toggle('active');
+                navigation.classList.toggle('active');
+            }
+        </script>
+    </body>
+</html>
+        
+     
+    </body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.list').click(function(){
+                const value = $(this).attr('data-filter');
+                if (value == 'all'){
+                    $('.itemBox').show('1000');
+                }
+                else{
+                    $('.itemBox').not('.'+value).hide('1000');
+                    $('.itemBox').filter('.'+value).show('1000');
+                }
+            })
+            // add active class on selected item
+
+            $('.list').click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+            })
+        })
+        </script>s
+</html>
