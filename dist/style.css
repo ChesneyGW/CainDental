@@ -691,6 +691,8 @@ span{
 @media (max-width: 991px) {
     .contact {
         padding: 15px;
+        padding-top: 0px;
+        min-height: none;
     }
     .contact-container {
         flex-direction: column;
